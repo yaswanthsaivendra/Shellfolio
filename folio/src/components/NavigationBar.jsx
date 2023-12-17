@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import Logo from './../assets/logo.png';
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 const navLinks = [
   {
     "name" : "Home"
   },
   {
+    "name" : "About"
+  },
+  {
     "name" : "Projects"
   },
   {
     "name" : "Work Experience"
-  },
-  {
-    "name" : "Contact"
   }
 ]
 
@@ -21,7 +22,7 @@ function NavigationBar() {
   const [nav, setNav] = useState(false);
 
   return (
-    <nav className='flex justify-between items-center pl-10 pr-16 pt-4'>
+    <nav className='flex justify-between items-center pl-10 pr-16 pt-4 sticky top-0 z-10 bg-bgcolor'>
         <div className='pt-4'>
             <a href="/">
                 <img src={Logo} alt='pic'  className='w-20 h-20'/>
@@ -29,8 +30,20 @@ function NavigationBar() {
         </div>
         <ul className='hidden md:flex items-center justify-evenly'>
           {navLinks.map((item, index) => (
-                <li key={index} className='p-2 m-2 transition hover:text-primary duration-200'>
-                  <a href="#">{item.name}</a>
+            <li key={index} className='p-2 m-2 transition hover:text-primary duration-200'>
+                <Link
+                activeClass='active'
+                className='{item.name}'
+                to='{item.name}'
+                smooth={true}
+                spy={true}
+                duration={500} 
+                // offset={400}
+                
+                >
+                  {item.name}
+                </Link>
+
                 </li>
           ))}  
         </ul>

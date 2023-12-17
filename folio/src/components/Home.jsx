@@ -24,14 +24,12 @@ const socialLinks = [
 
 const Home = () => {
   return (
-    <div name="home" className='h-screen'>
+    <div id="Home" className='element h-screen bg-bgcolor'>
         <div className='h-full flex flex-col justify-center w-full px-8 max-w-screen-lg'>
             <h6 className='text-primary pb-1'>Hi, my name is</h6>
             <h2 className='font-bold text-5xl sm:text-8xl'>Yaswanth Sai Vendra</h2>
-            <p className='max-w-3xl text-gray-400 py-2 mb-14 md:mb-28'>
-                I am an UnderGrad with Knowledge in the fields of FullStack Web Development, Web Security,
-                Network Security and Blockchain Development. I do code, play ctfs, hunt bugs and contribute
-                to opensource.
+            <p className='max-w-3xl text-gray-400 py-2 mb-14 md:mb-28 ml-1 lg:ml-4'>
+                Full Stack Web Developer | Blockchain Developer | Freelancer | Full Stack Developer Intern @Cohesive AI | Open Source Mentor @GSSOC'22
             </p>
         <div className='cursor-pointer flex-row justify-center pr-8 space-x-4 flex md:flex-col md:space-x-0 md:space-y-3 lg:space-y-4 md:items-start'>
           {socialLinks.map((item, index) => (
