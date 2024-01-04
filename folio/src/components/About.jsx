@@ -7,8 +7,9 @@ import '../assets/css/wave_styles.css'
 
 const About = () => {
     return (
-        <div id="About" className='element w-full h-full sm:h-screen bg-gradient-to-b from-bgcolor to-black py-10 relative'>
-            <div className='mx-auto max-w-screen-lg flex flex-col justify-center items-center px-10'>
+        <div id="About" className='element w-full h-full sm:h-screen bg-gradient-to-b from-bgcolor to-black py-10 relative sm:pb-0 pb-24'>
+            <div className='mx-auto max-w-screen-lg flex flex-col justify-center items-center px-10'
+                data-aos="zoom-in" data-aos-offset="200" data-aos-easing="ease-out-quad" data-aos-duration="1200">
                 <div>
                     <p className='font-semibold text-2xl mb-12 text-primary'>About</p>
                 </div>

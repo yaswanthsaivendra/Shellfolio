@@ -68,8 +68,10 @@ const Projects = () => {
                     isGreaterThanSmallScreen ? (
                         index % 2 === 0 ? (
                             <div className='flex flex-col items-center sm:flex-row sm:space-x-8 space-y-3' key={index}>
-                                <img src={project.image} alt="" className='w-72 lg:w-96 md:w-80 sm:h-52 rounded-md shadow transition duration-300 ease-in-out transform hover:shadow-md focus:shadow-md' />
-                                <div className='w-72 lg:w-96 md:w-80 flex flex-col space-y-2'>
+                                <img src={project.image} alt="" className='w-72 lg:w-96 md:w-80 sm:h-52 rounded-md shadow transition duration-300 ease-in-out transform hover:shadow-md focus:shadow-md'
+                                    data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out-quad" data-aos-duration="1200" />
+                                <div className='w-72 lg:w-96 md:w-80 flex flex-col space-y-2'
+                                    data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-out" data-aos-duration="1200" >
                                     <h2 className='font-semibold text-lg'>{project.name}</h2>
                                     <p className='text-sm'>{project.description}</p>
 
@@ -93,7 +95,8 @@ const Projects = () => {
 
                         ) : (
                             <div className='flex flex-col items-center sm:flex-row sm:space-x-8 space-y-3' key={index}>
-                                <div className='w-72 lg:w-96 md:w-80 flex flex-col space-y-2'>
+                                <div className='w-72 lg:w-96 md:w-80 flex flex-col space-y-2'
+                                    data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-out" data-aos-duration="1200">
                                     <h2 className='font-semibold text-lg'>{project.name}</h2>
                                     <p className='text-sm'>{project.description}</p>
 
@@ -113,15 +116,18 @@ const Projects = () => {
                                         </a>
                                     </div>
                                 </div>
-                                <img src={project.image} alt="" className='w-72 lg:w-96 md:w-80 sm:h-52 rounded-md shadow transition duration-300 ease-in-out transform hover:shadow-md focus:shadow-md' />
+                                <img src={project.image} alt="" className='w-72 lg:w-96 md:w-80 sm:h-52 rounded-md shadow transition duration-300 ease-in-out transform hover:shadow-md focus:shadow-md'
+                                    data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-out" data-aos-duration="1200" />
                             </div>
                         )
 
 
                     ) : (
                         <div className='flex flex-col items-center sm:flex-row sm:space-x-8 space-y-3' key={index}>
-                            <img src={project.image} alt="" className='w-72 lg:w-96 md:w-80 sm:h-52 rounded-md shadow transition duration-300 ease-in-out transform hover:shadow-md focus:shadow-md' />
-                            <div className='w-72 lg:w-96 md:w-80 flex flex-col space-y-2'>
+                            <img src={project.image} alt="" className='w-72 lg:w-96 md:w-80 sm:h-52 rounded-md shadow transition duration-300 ease-in-out transform hover:shadow-md focus:shadow-md'
+                                data-aos="zoom-in" data-aos-offset="200" data-aos-easing="ease-out-quad" data-aos-duration="600"/>
+                            <div className='w-72 lg:w-96 md:w-80 flex flex-col space-y-2'
+                                data-aos="slide-up" data-aos-offset="200" data-aos-easing="ease-out" data-aos-duration="1200">
                                 <h2 className='font-semibold text-lg'>{project.name}</h2>
                                 <p className='text-sm'>{project.description}</p>
 
@@ -143,8 +149,6 @@ const Projects = () => {
                             </div>
                         </div>
                     )
-
-
 
 
 

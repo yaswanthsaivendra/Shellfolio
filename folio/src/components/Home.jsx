@@ -31,7 +31,8 @@ const Home = () => {
             <p className='max-w-3xl text-gray-400 py-2 mb-14 md:mb-28 ml-1 lg:ml-4'>
                 Full Stack Web Developer | Blockchain Developer | Freelancer | Full Stack Developer Intern @Cohesive AI | Open Source Mentor @GSSOC'22
             </p>
-        <div className='cursor-pointer flex-row justify-center pr-8 space-x-4 flex md:flex-col md:space-x-0 md:space-y-3 lg:space-y-4 md:items-start'>
+        <div className='cursor-pointer flex-row justify-center pr-8 space-x-4 flex md:flex-col md:space-x-0 md:space-y-3 lg:space-y-4 md:items-start'
+          data-aos="zoom-out" data-aos-offset="0" data-aos-easing="ease-out" data-aos-duration="1200">
           {socialLinks.map((item, index) => (
               <a key={index} target='blank' className='transition hover:text-primary duration-200' href={item.link}>
                 {item.icon}

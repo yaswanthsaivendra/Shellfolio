@@ -23,7 +23,8 @@ function NavigationBar() {
 
   return (
     <nav className='flex justify-between items-center pl-10 pr-16 pt-4 sticky top-0 z-10 bg-bgcolor'>
-        <div className='pt-4'>
+        <div className='pt-4' 
+          data-aos="zoom-in" data-aos-offset="0" data-aos-easing="ease-out-quad" data-aos-duration="1200">
             <a href="/">
                 <img src={Logo} alt='pic'  className='w-20 h-20'/>
             </a>
@@ -38,7 +39,7 @@ function NavigationBar() {
                 smooth={true}
                 spy={true}
                 duration={500} 
-                // offset={400}
+                offset={200}
                 
                 >
                   {item.name}
