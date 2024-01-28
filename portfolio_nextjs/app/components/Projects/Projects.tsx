@@ -1,60 +1,13 @@
-"use client";
-import React, {useEffect} from 'react';
+"use client"
+
+import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
 import { BsEyeFill } from 'react-icons/bs';
 import { BiCodeAlt } from 'react-icons/bi';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Categories } from './ProjectsStore';
 
-
-
-
-const myProjects = [
-    {
-        "name": "SocialXchange",
-        "image": "/assets/project_images/socialXchange.png",
-        "description": "A platform where individuals earn and sell social credits to companies for fulfilling Corporate Social \
-        Responsibility (CSR) goals. Users engage in social activities, earning credits in education, health, hunger, environment, \
-        and more. Companies purchase credits using cryptocurrency (MATIC) for transparent CSR fulfillment.",
-        "skills": [
-            "Solidity",
-            "Hardhat",
-            "React",
-            "Polygon"
-        ],
-        "demoLink": "https://github.com/yaswanthsaivendra/socialXchange",
-        "codeLink": "https://github.com/yaswanthsaivendra/socialXchange",
-    },
-    {
-        "name": "homeStay",
-        "image": "/assets/project_images/homeStay.png",
-        "description": "HomeStay is a decentralized P2P home rental service application. It uses the concepts of Smart Contract based agreements and Timebased wallet transactions in manging the \
-        rental service.",
-        "skills": [
-            "Solidity",
-            "React",
-            "Truffle",
-        ],
-        "demoLink": "https://github.com/yaswanthsaivendra/homeStay",
-        "codeLink": "https://github.com/yaswanthsaivendra/homeStay",
-    },
-    {
-        "name": "Devnode",
-        "image": "/assets/project_images/devnode.png",
-        "description": "A community-based web platform where people can post their needs for team members to participate \
-        alongside them in upcoming hackathons, coding events and opensource projects.",
-        "skills": [
-            "Flask",
-            "Javascript",
-            "BootStrap",
-            "Twilio"
-        ],
-        "demoLink": "https://github.com/yaswanthsaivendra/Devnode",
-        "codeLink": "https://github.com/yaswanthsaivendra/Devnode",
-    },
-
-
-]
 
 
 const Projects = () => {
@@ -63,13 +16,36 @@ const Projects = () => {
         AOS.init();
     }, []);
 
+    const [openTab, setOpenTab] = useState(0);
+    const [activeProjects, setActiveProjects] = useState(Categories[0].projects);
+
+
+
     const isGreaterThanSmallScreen = window.innerWidth >= 640; //breakpoint for a screen larger than small screen
+    
     return (
         <div id='Projects' className='element bg-bgcolor py-12'>
             <h1 className='text-center font-semibold mb-12 text-2xl'>Projects</h1>
+
+            <div className='mb-12'>
+                <ul className='flex items-center justify-center space-x-4 overflow-hidden'>
+                    {Categories.map((category, index) => 
+                        <li key={index} className={`cursor-pointer px-2 border-b transition duration-200 ${openTab === index ? 'bg-primary border-primary' : ''}`}
+                        onClick={e => {
+                            e.preventDefault();
+                            setOpenTab(index);
+                            setActiveProjects(category.projects)
+                        }}>
+                            {category.name}
+                        </li>
+                    )}
+                </ul>
+
+            </div>
+
             <div className='flex flex-col space-y-20 justify-center items-center'>
 
-                {myProjects.map((project, index) => (
+                {activeProjects.map((project, index) => (
 
                     isGreaterThanSmallScreen ? (
                         index % 2 === 0 ? (
@@ -164,15 +140,7 @@ const Projects = () => {
                             </div>
                         </div>
                     )
-
-
-
-
                 ))}
-
-
-
-
             </div>
 
 
