@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
@@ -17,11 +17,13 @@ const Projects = () => {
     }, []);
 
     const [openTab, setOpenTab] = useState(0);
+    const [isGreaterThanSmallScreen, setIsGreaterThanSmallScreen] = useState(true);
     const [activeProjects, setActiveProjects] = useState(Categories[0].projects);
 
 
-
-    const isGreaterThanSmallScreen = window.innerWidth >= 640; //breakpoint for a screen larger than small screen
+    useEffect(() => {
+        if(window.innerWidth <= 640) setIsGreaterThanSmallScreen(false);
+    }, [])
     
     return (
         <div id='Projects' className='element bg-bgcolor py-12'>

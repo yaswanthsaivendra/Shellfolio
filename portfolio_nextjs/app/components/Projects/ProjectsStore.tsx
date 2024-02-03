@@ -114,10 +114,6 @@ export const Categories:{
         projects: blockchainProjects
     },
     {
-        name: 'APIs',
-        projects: web2Projects
-    },
-    {
         name: 'CLI/Desktop',
         projects: otherProjects
     },
