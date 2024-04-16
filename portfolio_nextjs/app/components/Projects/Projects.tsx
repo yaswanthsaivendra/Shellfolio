@@ -26,13 +26,14 @@ const Projects = () => {
     }, [])
     
     return (
-        <div id='Projects' className='element bg-bgcolor py-12'>
+        <div id='Projects' className='element min-h-[88vh] bg-bgcolor py-12 relative'>
             <h1 className='text-center font-semibold mb-12 text-2xl'>Projects</h1>
 
-            <div className='mb-12'>
-                <ul className='flex items-center justify-center space-x-4 overflow-hidden'>
+            
+            <div className=' bg-gray-800 absolute z-10 right-0 left-0 w-[320px] sm:w-[360px] mx-auto shadow-md shadow-primary rounded-lg p-2'>
+                <ul className='flex items-center justify-center space-x-4 text-sm text-gray-300'>
                     {Categories.map((category, index) => 
-                        <li key={index} className={`cursor-pointer px-2 border-b transition duration-200 ${openTab === index ? 'bg-primary border-primary' : ''}`}
+                        <li key={index} className={`cursor-pointer px-2 border border-gray-600 rounded-xl p-2 transition duration-200 ${openTab === index ? 'bg-primary border-primary' : ''}`}
                         onClick={e => {
                             e.preventDefault();
                             setOpenTab(index);
@@ -45,7 +46,7 @@ const Projects = () => {
 
             </div>
 
-            <div className='flex flex-col space-y-20 justify-center items-center'>
+            <div className='flex flex-col space-y-12 justify-center items-center mt-44'>
 
                 {activeProjects.map((project, index) => (
 

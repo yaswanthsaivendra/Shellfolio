@@ -80,7 +80,7 @@ const otherProjects:Project[] = [
         "skills": [
             "Python",
             "Scapy",
-            "Computer Networks",
+            "Networks",
             "Reconnaissance"
         ],
         "demoLink": "https://github.com/yaswanthsaivendra/the_noob_pentester",
@@ -106,7 +106,7 @@ export const Categories:{
     projects: Project[];
 }[] = [
     {
-        name: 'Web Apps',
+        name: 'Web 2.0',
         projects: web2Projects
     },
     {
