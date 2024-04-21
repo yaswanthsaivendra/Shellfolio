@@ -6,16 +6,25 @@ import Image from 'next/image';
 
 const navLinks = [
   {
-    "name" : "Home"
+    "name" : "Home",
+    "link" : "/"
   },
   {
-    "name" : "About"
+    "name" : "About",
+    "link" : "/"
   },
   {
-    "name" : "Projects"
+    "name" : "Blog",
+    "link" : "/blog"
+
   },
   {
-    "name" : "Work Experience"
+    "name" : "Projects",
+    "link" : "/"
+  },
+  {
+    "name" : "Work Experience",
+    "link" : "/"
   }
 ]
 
@@ -39,8 +48,7 @@ function NavigationBar() {
           {navLinks.map((item, index) => (
             <li key={index} className='p-2 m-2 transition hover:text-primary duration-200'>
                 <Link
-                href='/'
-                className='{item.name}'
+                href={item.link}
                 >
                   {item.name}
                 </Link>
@@ -59,7 +67,7 @@ function NavigationBar() {
         <ul className='absolute top-0 left-0 w-full h-screen flex flex-col justify-center items-center text-4xl space-y-12 text-gray-400 bg-bgcolor md:hidden'>
           {navLinks.map((item, index) => (
                 <li key={index} className='p-2 m-2 transition hover:text-primary duration-200'>
-                  <a href="#">{item.name}</a>
+                  <a href={item.link}>{item.name}</a>
                 </li>
           ))} 
         </ul>

@@ -1,41 +1,52 @@
-import React from "react";
 import fs from "fs";
 import Link from "next/link";
-
-const getBlogMetadata = () => {
-  const folder = "blogs/";
-  const files = fs.readdirSync(folder);
-  const markdownPosts = files.filter((files) => files.endsWith(".md"));
-  const slugs = markdownPosts.map((file) => file.replace(".md", ""));
-  return slugs;
-};
+import Image from "next/image";
+import path from "path";
 
 const Blog = () => {
-  const blogMetadata = getBlogMetadata();
-  const blogPreviews = blogMetadata.map((slug) => (
-    <div key={slug}>
-      <Link href={`/blog/${slug}`}>
-        <h1>{slug}</h1>
-      </Link>
-    </div>
-  ));
+
+  const blogs : {
+    name : string,
+    image : string,
+    firstFileName : string
+  } [] = []
+
+  
+  //@desc Get Blog Folder Metadata - Folder Name and Image
+  const getblogFolders = () => {
+    const allowed_image_file_extensions = ["jpg", "png", "jpeg"]
+    const blogFolders = fs.readdirSync(path.resolve('./public/blogs'));
+    blogFolders.forEach((blogFolder) => {
+      let firstFileName = "";
+      const files = fs.readdirSync(path.resolve('./public/blogs/' + blogFolder));
+      const image_file = files.find((file) => {
+        if(firstFileName === "") {
+          firstFileName = file.startsWith("01") ? file.split(".")[0] : "";
+        }
+        return allowed_image_file_extensions.find((extension) => extension === file.split(".")[1]) 
+      });
+      blogs.push({
+        "name" : blogFolder,
+        "image" : `/blogs/${blogFolder}/${image_file}`,
+        "firstFileName" : firstFileName
+      })
+    })
+  }
+  getblogFolders();
+
 
   return (
-    <div className="bg-bgcolor h-screen flex flex-col">
-      <div className="flex justify-center items-center mt-8">
-        <div className="flex items-center justify-evenly border rounded-sm w-32 h-8">
-          <div className="bg-primary">
-            <h2 className="">Blogs</h2>
-          </div>
-          <div className="border-l border-white h-8">
-
-          </div>
-          <div className="">
-            <h2 className="">Notes</h2>
-          </div>
-        </div>
+    <div className="bg-bgcolor min-h-screen flex flex-col p-8">
+      <h1 className="text-center font-semibold mt-14 tracking-widest kalam-regular">NOTE DOWN</h1>
+      <div className="grid grid-cols-1  gap-8 md:grid-cols-2 xl:grid-cols-3 mx-auto xl:gap-28 mt-16">
+        {blogs.map((blog, index) => (
+          <Link href={`/blog/${blog.name}/${blog.firstFileName}`} key={index} className="border border-gray-500 rounded-lg  shadow-md shadow-gray-800">
+            <Image src={blog.image} width={384} height={280} alt="blogImage" className=" rounded-tr-lg rounded-tl-lg"/>
+            <h1 className="text-xl my-2 mx-4 text-primary font-bold">{blog.name}</h1>
+          </Link>
+        ))}
       </div>
-      {blogPreviews}
+
     </div>
   );
 };
