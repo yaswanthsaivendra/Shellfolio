@@ -26,7 +26,7 @@ const Projects = () => {
     }, [])
     
     return (
-        <div id='Projects' className='element min-h-[88vh] bg-bgcolor py-12 relative'>
+        <div id='projects' className='element min-h-[88vh] bg-bgcolor py-12 relative'>
             <h1 className='text-center font-semibold mb-12 text-2xl'>Projects</h1>
 
             

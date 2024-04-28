@@ -24,7 +24,7 @@ const socialLinks = [
 
 const HomeComponent = () => {
   return (
-    <div className='element min-h-[88vh] pb-28 flex flex-col flew-grow justify-end bg-bgcolor'>
+    <div id='home' className='element min-h-[88vh] pb-28 flex flex-col flew-grow justify-end bg-bgcolor'>
         <div className='h-full flex flex-col justify-center w-full px-8 max-w-screen-xl'>
             <h6 className='text-primary pb-1'>Hi, my name is</h6>
             <h2 className='font-bold text-5xl sm:text-8xl '>Yaswanth Sai Vendra</h2>

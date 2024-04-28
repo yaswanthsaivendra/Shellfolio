@@ -24,7 +24,7 @@ const BlogPage = ({ params }: { params: any }) => {
     return (
         <div className='bg-bgcolor min-h-screen flex flex-col'>
             <SideBar blogFileNames={blogFileNames}/>
-            <div className='prose ml-96 mt-12'>
+            <div className='prose prose-invert md:ml-96 my-12 mx-8'>
                 <Markdown>
                     {content}
                 </Markdown>

@@ -31,11 +31,11 @@ const SideBar = ({ blogFileNames }: {
             </aside>
 
             {/* hamburger  */}
-            <div onClick={() => setNav(!nav)} className='cursor-pointer text-gray-400 z-10 md:hidden'>
+            <div className=' text-gray-400 z-10 md:hidden'>
                 {nav ? (
                     <aside className='w-64 bg-gray-800 min-h-screen fixed top-0 left-0 z-10'>
-                        <div className='flex justify-end'>
-                            <FaTimes size={30} className='m-4' />
+                        <div className='flex justify-start'>
+                            <FaTimes size={30} onClick={() => setNav(!nav)} className='m-4 cursor-pointer' />
                         </div>
                         <ul className='flex flex-col space-y-2 mx-2'>
 
@@ -53,7 +53,7 @@ const SideBar = ({ blogFileNames }: {
                     </aside>
                 ) : (
                     <div className='flex flex-col'>
-                        <FaBars size={30} className='m-4' />
+                        <FaBars size={30} onClick={() => setNav(!nav)} className='m-4 cursor-pointer' />
                     </div>
                 )}
             </div>

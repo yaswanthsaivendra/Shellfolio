@@ -1,30 +1,31 @@
 "use client"
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from "react-icons/fa";
-import Link from 'next/link';
 import Image from 'next/image';
+import { Link as ScrollLink } from "react-scroll";
+import Link from 'next/link';
+
 
 const navLinks = [
   {
     "name" : "Home",
-    "link" : "/"
+    "to" : "home"
   },
   {
     "name" : "About",
-    "link" : "/"
+    "to" : "about"
   },
   {
     "name" : "Blog",
-    "link" : "/blog"
-
+    "to" : "/blog"
   },
   {
     "name" : "Projects",
-    "link" : "/"
+    "to" : "projects"
   },
   {
     "name" : "Work Experience",
-    "link" : "/"
+    "to" : ""
   }
 ]
 
@@ -46,13 +47,22 @@ function NavigationBar() {
         </div>
         <ul className='hidden md:flex items-center justify-evenly'>
           {navLinks.map((item, index) => (
-            <li key={index} className='p-2 m-2 transition hover:text-primary duration-200'>
-                <Link
-                href={item.link}
+            <li key={index} className='m-2 transition hover:text-primary duration-200 cursor-pointer'>
+              {item.name === 'Blog' ? 
+              (
+              <Link href={item.to}>
+              {item.name}
+              </Link>
+              ) : (
+                <ScrollLink
+                to={item.to}
+                spy={true} smooth={true} duration={500}
+                className='p-2'
                 >
                   {item.name}
-                </Link>
-
+                </ScrollLink>
+                
+              )}
                 </li>
           ))}  
         </ul>
@@ -67,7 +77,18 @@ function NavigationBar() {
         <ul className='absolute top-0 left-0 w-full h-screen flex flex-col justify-center items-center text-4xl space-y-12 text-gray-400 bg-bgcolor md:hidden'>
           {navLinks.map((item, index) => (
                 <li key={index} className='p-2 m-2 transition hover:text-primary duration-200'>
-                  <a href={item.link}>{item.name}</a>
+                  {item.name === 'Blog' ? 
+                  (<Link 
+                    href={item.to}
+                    >
+                    {item.name}
+                    </Link>
+                  ) :
+                  (
+                  <ScrollLink 
+                    to={item.to}
+                    onClick={() => setNav(!nav)}
+                    spy={true} smooth={true} duration={500}>{item.name}</ScrollLink>)}
                 </li>
           ))} 
         </ul>
