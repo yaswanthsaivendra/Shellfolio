@@ -10,7 +10,7 @@ interface Project {
 const web2Projects:Project[] = [
     {
         "name": "Devnode",
-        "image": "/assets/project_images/devnode.png",
+        "image": "/assets/project_images/web2/devnode.png",
         "description": "A community-based web platform where people can post their needs for team members to participate \
         alongside them in upcoming hackathons, coding events and opensource projects.",
         "skills": [
