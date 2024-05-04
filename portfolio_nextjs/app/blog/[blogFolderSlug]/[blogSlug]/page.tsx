@@ -10,7 +10,7 @@ const getBlogContent = (blogFilePath: string) => {
 }
 
 const getAllBlogFiles = (blogFolderSlug : string) => {
-    const allFiles = fs.readdirSync(path.resolve(`./public/blogs/${blogFolderSlug}`));
+    const allFiles = fs.readdirSync(decodeURI(path.resolve(`./public/blogs/${blogFolderSlug}`)));
     const blogFiles = allFiles.filter((file) => (file.endsWith(".md")));
     const blogFileNames = blogFiles.map((file) => (file.split(".")[0]));
     return blogFileNames;
