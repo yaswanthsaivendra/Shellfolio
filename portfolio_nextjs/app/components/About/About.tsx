@@ -1,32 +1,112 @@
 import React from 'react';
-import './wave_styles.css';
-
-
+import { RiGraduationCapFill } from "react-icons/ri";
+import { GiWeightLiftingUp } from "react-icons/gi";
+import { BiSolidCameraMovie } from "react-icons/bi";
+import { FaPython } from "react-icons/fa6";
+import { IoLogoJavascript } from "react-icons/io5";
+import { SiSolidity } from "react-icons/si";
+import { FaGolang } from "react-icons/fa6";
+import { TbBrandCpp } from "react-icons/tb";
+import { SiTypescript } from "react-icons/si";
+import { SiDjango } from "react-icons/si";
+import { FaReact } from "react-icons/fa";
+import { SiFlask } from "react-icons/si";
+import { FaNode } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
+import { FaGitAlt } from "react-icons/fa";
+import { FaDocker } from "react-icons/fa";
+import { FaLinux } from "react-icons/fa";
+import { SiNginx } from "react-icons/si";
+import { DiRedis } from "react-icons/di";
+import { SiCelery } from "react-icons/si";
+import { SiTailwindcss } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { SiMongodb } from "react-icons/si";
+import { SiMysql } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
+import { SiGooglecloud } from "react-icons/si";
+import { IoLogoFirebase } from "react-icons/io5";
 
 const About = () => {
     return (
         <div id="about" className='min-h-[88vh] bg-gradient-to-b from-bgcolor to-black py-10 sm:pb-0 pb-12'>
             <div className='mx-auto max-w-screen-lg flex flex-col justify-center items-center px-10'
                 data-aos="zoom-in" data-aos-offset="200" data-aos-easing="ease-out-quad" data-aos-duration="1200"
-                >
+            >
                 <div>
                     <p className='font-semibold text-2xl mb-12 text-primary'>About</p>
                 </div>
 
-                <p>
-                    I am an undergrad college student from NIT Surat. I am passionate about Software Engineering and Technology, with a solid foundation in full-stack web development and blockchain development. My journey in these domains includes valuable experiences, such as working as a full-stack web developer intern, freelancing on various projects, and serving as an open-source contributor and mentor. I also have basic knowledge in cybersecurity, mainly in application and network security.
-                </p>
-                <br />
-                <p>
-                    My experiences include working as a freelancer with 3 clients so far. I was part of two technical clubs in college, namely GDSC and MLSA. I took part in 7 hackathons to date, and our team secured a position in the top 8 in 2 national hackathons. I also ranked in top 3 winners in 2 of my college hackathons. I made contributions in opensource events like FOSSASIA, GSSOC. I acted as a opensource mentor in GSSOC&apos;22, helping over 20 opensource newcomers to make their first contributions. I completed an internship as a full stack developer at Cohesive AI.
-                </p>
+                <div className='flex flex-col items-center space-y-12 sm:flex-row lg:space-x-80 md:space-x-32 sm:space-x-24'>
+                    <div className='flex flex-col space-y-20'>
+                        <div className='border-2 border-primary shadow-sm rounded-lg w-48 h-48 flex flex-col p-4 items-center space-y-4'>
+                            <RiGraduationCapFill size={200} className='text-primary' />
+                            <div className='flex flex-col items-center space-y-2'>
+                                <h3 className='text-xl tracking-wide'>NIT Surat</h3>
+                                <p>B.Tech in Electrical <br />
+                                    Engineering</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 className='text-xl font-semibold pb-8 text-center sm:text-start'>Hobbies</h2>
+                            <div className='flex space-x-6'>
+                                <div className='flex flex-col space-y-2 items-center'>
+                                    <GiWeightLiftingUp size={48} className='text-primary' />
+                                    <p>I hit Gym</p>
+                                </div>
+                                <div className='flex flex-col space-y-2 items-center'>
+                                    <BiSolidCameraMovie size={48} className='text-primary' />
+                                    <p>Watch Movies</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className=''>
+                        <h2 className='text-xl font-semibold pb-8 text-center sm:text-start'>Skills</h2>
+                        <div className='flex flex-col space-y-4'>
+                            <div className='flex space-x-4 items-center'>
+                                <FaPython size={32} className='text-primary'/>
+                                <IoLogoJavascript size={32} className='text-primary' />
+                                <SiSolidity size={32} className='text-primary' />
+                                <FaGolang size={48} className='text-primary' />
+                                <TbBrandCpp size={32} className='text-primary' />
+                                <SiTypescript size={32} className='text-primary' />
+                            </div>
+                            <div className='flex space-x-4 items-center'>
+                                <SiDjango size={32} className='text-primary' />
+                                <FaReact size={32} className='text-primary' />
+                                <SiFlask size={32} className='text-primary' />
+                                <FaNode size={48} className='text-primary' />
+                                <SiNextdotjs size={32} className='text-primary' />
+                                <SiTailwindcss size={32} className='text-primary' />
+                            </div>
+                            <div className='flex space-x-4 items-center'>
+                                <FaGitAlt size={32} className='text-primary' />
+                                <FaDocker size={32} className='text-primary' />
+                                <FaLinux size={32} className='text-primary' />
+                                <DiRedis size={48} className='text-primary' />
+                                <SiNginx size={32} className='text-primary' />
+                                <SiCelery size={32} className='text-primary' />
+                            </div>
+                            <div className='flex space-x-4 items-center'>
+                                <BiLogoPostgresql size={32} className='text-primary' />
+                                <SiMongodb size={32} className='text-primary' />
+                                <SiMysql size={32} className='text-primary' />
+                                <IoLogoFirebase size={32} className='text-primary' />
+                                <FaAws size={48} className='text-primary' />
+                                <SiGooglecloud size={32} className='text-primary' />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
 
             </div>
-            {/* <div className="wave">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="shape-fill"></path>
-                </svg>
-            </div> */}
+
         </div>
     )
 }

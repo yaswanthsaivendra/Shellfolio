@@ -2,6 +2,8 @@ import fs from "fs";
 import Link from "next/link";
 import Image from "next/image";
 import path from "path";
+import BackButton from "../components/BackButton";
+
 
 const Blog = () => {
 
@@ -37,11 +39,12 @@ const Blog = () => {
 
   return (
     <div className="bg-bgcolor min-h-screen flex flex-col p-8">
+      <BackButton path='/'/>
       <h1 className="text-center font-semibold mt-14 tracking-widest kalam-regular">NOTE DOWN</h1>
       <div className="grid grid-cols-1  gap-8 md:grid-cols-2 xl:grid-cols-3 mx-auto xl:gap-28 mt-16">
         {blogs.map((blog, index) => (
           <Link href={`/blog/${blog.name}/${blog.firstFileName}`} key={index} className="border border-gray-500 rounded-lg  shadow-md shadow-gray-800">
-            <Image src={blog.image} width={384} height={280} alt="blogImage" className=" rounded-tr-lg rounded-tl-lg"/>
+            <Image src={blog.image} width={384} height={280} alt="blogImage" className="w-120 h-52 rounded-tr-lg rounded-tl-lg"/>
             <h1 className="text-xl my-2 mx-4 text-primary font-bold">{blog.name}</h1>
           </Link>
         ))}

@@ -3,6 +3,8 @@ import fs from 'fs';
 import Markdown from 'react-markdown';
 import path from 'path';
 import SideBar from './SideBar';
+import BackButton from '@/app/components/BackButton';
+
 
 const getBlogContent = (blogFilePath: string) => {
     const content = fs.readFileSync(decodeURI(blogFilePath), "utf8");
@@ -17,13 +19,16 @@ const getAllBlogFiles = (blogFolderSlug : string) => {
 }
 
 const BlogPage = ({ params }: { params: any }) => {
+
+
     const blogFilePath = path.resolve(`./public/blogs/${params.blogFolderSlug}/${params.blogSlug}.md`);
     const content = getBlogContent(blogFilePath);
     const blogFileNames = getAllBlogFiles(params.blogFolderSlug);
 
     return (
         <div className='bg-bgcolor min-h-screen flex flex-col'>
-            <SideBar blogFileNames={blogFileNames}/>
+            <BackButton path='/blog/'/>
+            <SideBar blogFileNames={blogFileNames} blogFolderName={params.blogFolderSlug}/>
             <div className='prose prose-invert md:ml-96 my-12 mx-8'>
                 <Markdown>
                     {content}

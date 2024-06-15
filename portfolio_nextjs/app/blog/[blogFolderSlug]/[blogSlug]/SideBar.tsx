@@ -3,14 +3,20 @@ import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
 
 
 
-const SideBar = ({ blogFileNames }: {
-    blogFileNames: string[]
+const SideBar = ({ blogFileNames, blogFolderName } : {
+    blogFileNames: string[],
+    blogFolderName: string
 }) => {
     const [nav, setNav] = useState(false);
-    const [activeTab, setActiveTab] = useState(0);
+    const pathName = decodeURI(usePathname());
+
+
+    // Determine the active tab based on the current path
+    const activeTab = blogFileNames.findIndex(blogFileName => pathName.includes(blogFileName));
 
     return (
         <>
@@ -18,9 +24,9 @@ const SideBar = ({ blogFileNames }: {
                 <ul className='flex flex-col space-y-2 mt-8 mx-2'>
                     {blogFileNames.map((blogFileName, index) => (
                         <li className='' key={index}>
-                            <Link href=""
+                            <Link 
+                                href={`/blog/${blogFolderName}/${blogFileName}`}
                                 className={`${index === activeTab ? 'bg-gray-700' : ''} flex rounded-lg hover:bg-gray-700 transition-colors duration-200 p-2`}
-                                onClick={() => setActiveTab(index)}
                             >
                                 <span>{blogFileName}</span>
                             </Link>
@@ -41,9 +47,8 @@ const SideBar = ({ blogFileNames }: {
 
                             {blogFileNames.map((blogFileName, index) => (
                                 <li className='' key={index}>
-                                    <Link href=""
+                                    <Link href={`/blog/${blogFolderName}/${blogFileName}`}
                                         className={`${index === activeTab ? 'bg-gray-700' : ''} flex rounded-lg hover:bg-gray-700 transition-colors duration-200 p-2`}
-                                        onClick={() => setActiveTab(index)}
                                     >
                                         <span>{blogFileName}</span>
                                     </Link>
@@ -60,7 +65,6 @@ const SideBar = ({ blogFileNames }: {
 
         </>
     )
-}
+};
 
-
-export default SideBar
+export default SideBar;
