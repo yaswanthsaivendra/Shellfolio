@@ -1,9 +1,9 @@
 "use client";
 import NavigationBar from "./components/NavigationBar";
 import HomeComponent from "./components/HomeComponent";
-import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
-import { useRef } from "react";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import WorkExperience from "./components/WorkExperience";
 
 export default function Home() {
  
@@ -13,6 +13,7 @@ export default function Home() {
     <HomeComponent/>
     <About/>
     <Projects/>
+    <WorkExperience />
     </div> 
   );
 }

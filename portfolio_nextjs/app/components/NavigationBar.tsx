@@ -25,7 +25,7 @@ const navLinks = [
   },
   {
     "name" : "Work Experience",
-    "to" : ""
+    "to" : "workExperience"
   }
 ]
 
