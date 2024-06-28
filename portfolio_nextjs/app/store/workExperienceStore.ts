@@ -8,8 +8,8 @@ const workExperiences : WorkExperience[] = [
         companyUrl : "https://kandsdigiprotect.com/",
         location : "Remote",
         skills : [
-            "Python",
             "Django Rest Framework",
+            "Next.js",
             "Docker",
             "PostgreSQL",
             "AWS",
@@ -34,9 +34,8 @@ const workExperiences : WorkExperience[] = [
         companyUrl : "https://cohesive.so/",
         location : "Remote",
         skills : [
-            "Python",
             "React",
-            "Django",
+            "Django Rest Framework",
         ]
     },
     {
