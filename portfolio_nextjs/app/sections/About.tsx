@@ -29,7 +29,7 @@ import { IoLogoFirebase } from "react-icons/io5";
 
 const About = () => {
     return (
-        <div id="about" className='min-h-[88vh] bg-gradient-to-b from-bgcolor to-black py-10 sm:pb-0 pb-12'>
+        <div id="about" className='min-h-screen bg-gradient-to-b from-bgcolor to-black py-10 sm:pb-0 pb-12'>
             <div className='mx-auto max-w-screen-lg flex flex-col justify-center items-center px-10'
                 data-aos="zoom-in" data-aos-offset="200" data-aos-easing="ease-out-quad" data-aos-duration="1200"
             >

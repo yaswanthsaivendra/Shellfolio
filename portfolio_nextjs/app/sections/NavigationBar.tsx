@@ -28,7 +28,7 @@ function NavigationBar() {
   const [nav, setNav] = useState(false);
 
   return (
-    <nav className='flex justify-between items-center pl-10 pr-16 pt-4 sticky top-0 z-10 bg-bgcolor'>
+    <nav className='flex justify-between items-center mx-auto max-w-7xl px-6 mt-6 sticky top-0 z-10 bg-bgcolor'>
       <div className='pt-4'>
         <a href="/" className=''>
           <Image
@@ -42,9 +42,10 @@ function NavigationBar() {
       </div>
       <ul className='hidden md:flex items-center justify-evenly'>
         {navLinks.map((item, index) => (
-          <li key={index} className='m-2 transition hover:text-primary duration-200 cursor-pointer'>
+          <li key={index} className='m-2 transition text-gray_gradient hover:text-primary duration-200 cursor-pointer'>
             <Link
               to={item.to}
+              offset={-100}
               spy={true}
               smooth={true}
               duration={500}
