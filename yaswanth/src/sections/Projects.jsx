@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { myProjects } from '../constants/index.js';
 import { SiNextdotjs, SiDjango, SiTailwindcss, SiFlask, SiTypescript, SiCelery } from "react-icons/si"; 
 import { FaAws, FaDocker, FaNode, FaReact, FaPython } from "react-icons/fa";
+import Background from '../components/Background';
 
 const projectCount = myProjects.length;
 
@@ -61,7 +62,8 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="min-h-screen py-20 bg-gradient-to-b from-black-100 to-black-200">
+    <section id="projects" className="min-h-screen py-20 relative overflow-hidden">
+      <Background variant="projects" />
       <div className="max-w-6xl mx-auto c-space">
         <div className="flex flex-col items-center mb-16">
           <h2 className="head-text text-center">Featured Projects</h2>

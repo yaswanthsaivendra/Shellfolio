@@ -18,7 +18,7 @@ const About = () => {
 
   return (
     <section className="min-h-screen py-16 w-full c-space relative overflow-hidden" id="about">
-      <Background />
+      <Background variant="about" />
       <div className="xl:h-[84vh] max-w-7xl mx-auto grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 sm:gap-5 gap-3 h-full">
         <div className="col-span-1 xl:row-span-3">
           <div className="w-full h-full border border-black-300 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#0f1b2d] via-[#162a47] to-[#0a1624] rounded-lg px-4 py-3 flex flex-col gap-2">

@@ -30,6 +30,16 @@ export default {
       backgroundImage: {
         terminal: "url('/assets/terminal.png')",
       },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        }
+      },
+      animation: {
+        'float': 'float 8s ease-in-out infinite',
+        'float-delay': 'float 8s ease-in-out infinite 4s',
+      }
     },
   },
   plugins: [],
