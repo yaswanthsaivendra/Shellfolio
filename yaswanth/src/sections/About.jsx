@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Globe from 'react-globe.gl';
 
 import Button from '../components/Button.jsx';
@@ -6,16 +5,6 @@ import Skills from '../components/Skills.jsx';
 import Background from '../components/Background.jsx';
 
 const About = () => {
-  const [hasCopied, setHasCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText('yaswanthsaivendra@gmail.com');
-    setHasCopied(true);
-
-    setTimeout(() => {
-      setHasCopied(false);
-    }, 2000);
-  };
 
   return (
     <section className="min-h-screen py-16 w-full relative overflow-hidden" id="about">
@@ -24,7 +13,7 @@ const About = () => {
         {/* First Box */}
         <div className="lg:col-span-1">
           <div className="w-full h-full border border-white/10 bg-gradient-to-br from-[#0f1b2d]/80 via-[#162a47]/80 to-[#0a1624]/80 rounded-xl backdrop-blur-sm px-6 py-4 flex flex-col gap-3 hover:border-white/20 transition-all duration-300">
-            <img src="assets/grid1.png" alt="grid-1" className="w-full sm:h-[240px] h-fit object-contain hover:scale-105 transition-transform duration-300" />
+            <img src="/avatar.png" alt="grid-1" className="w-full sm:h-[240px] h-fit object-contain hover:scale-105 transition-transform duration-300" />
             <div>
               <p className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Hi, I&apos;m Yaswanth</p>
               <p className="text-gray-300 text-sm mt-2">
@@ -93,14 +82,13 @@ const About = () => {
             <img
               src="assets/grid4.png"
               alt="grid-4"
-              className="w-full md:h-[126px] sm:h-[240px] h-fit object-cover sm:object-top"
+              className="w-full md:h-[146px] sm:h-[240px] h-fit object-cover sm:object-top"
             />
             <div className="space-y-2">
-              <p className="text-gray-300 text-center">Contact me</p>
-              <div className="flex items-center gap-2 cursor-pointer bg-black/20 p-2 rounded-lg" onClick={handleCopy}>
-                <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" className="w-6 h-6" />
-                <p className="text-lg md:text-xl font-medium text-white">yaswanthsaivendra@gmail.com</p>
-              </div>
+              <p className="text-2xl font-bold text-white">Code Quality Focus</p>
+              <p className="text-gray-300 text-sm">
+                I consistently deliver clean, maintainable code while ensuring efficient delivery and practical solutions.
+              </p>
             </div>
           </div>
         </div>
