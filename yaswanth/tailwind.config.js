@@ -9,6 +9,8 @@ export default {
       colors: {
         bgcolor:"#222f3e",
         primary : "#008080",
+        secondary: "#006666",
+        tertiary: "#004d4d",
         black: {
           DEFAULT: '#000',
           100: '#010103',

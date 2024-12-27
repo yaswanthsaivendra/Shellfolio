@@ -25,38 +25,45 @@ import { IoLogoFirebase } from "react-icons/io5";
 
 const Skills = () => {
     return (
-        <div className='flex flex-col space-y-4 justify-center'>
-            <div className='flex space-x-4 items-center'>
-                <FaPython size={28} className='text-primary' />
-                <IoLogoJavascript size={28} className='text-primary' />
-                <SiSolidity size={28} className='text-primary' />
-                <FaGolang size={36} className='text-primary' />
-                <TbBrandCpp size={28} className='text-primary' />
-                <SiTypescript size={28} className='text-primary' />
+        <div className='flex flex-col gap-3'>
+            {/* Row 1 */}
+            <div className='flex gap-3 justify-center'>
+                <FaPython size={26} className='text-[#3776AB] hover:scale-110 transition-transform' />
+                <IoLogoJavascript size={26} className='text-[#F7DF1E] hover:scale-110 transition-transform' />
+                <SiSolidity size={26} className='text-[#e47272] hover:scale-110 transition-transform' />
+                <FaGolang size={26} className='text-[#00ADD8] hover:scale-110 transition-transform' />
+                <TbBrandCpp size={26} className='text-[#00599C] hover:scale-110 transition-transform' />
+                <SiTypescript size={26} className='text-[#3178C6] hover:scale-110 transition-transform' />
             </div>
-            <div className='flex space-x-4 items-center'>
-                <SiDjango size={28} className='text-primary' />
-                <FaReact size={28} className='text-primary' />
-                <SiFlask size={28} className='text-primary' />
-                <FaNode size={36} className='text-primary' />
-                <SiNextdotjs size={28} className='text-primary' />
-                <SiTailwindcss size={28} className='text-primary' />
+
+            {/* Row 2 */}
+            <div className='flex gap-3 justify-center'>
+                <SiDjango size={26} className='text-[#21ea9d] hover:scale-110 transition-transform' />
+                <FaReact size={26} className='text-[#61DAFB] hover:scale-110 transition-transform' />
+                <SiFlask size={26} className='text-white hover:scale-110 transition-transform' />
+                <FaNode size={26} className='text-[#339933] hover:scale-110 transition-transform' />
+                <SiNextdotjs size={26} className='text-[#181818] hover:scale-110 transition-transform' />
+                <SiTailwindcss size={26} className='text-[#06B6D4] hover:scale-110 transition-transform' />
             </div>
-            <div className='flex space-x-4 items-center'>
-                <FaGitAlt size={28} className='text-primary' />
-                <FaDocker size={28} className='text-primary' />
-                <FaLinux size={28} className='text-primary' />
-                <DiRedis size={36} className='text-primary' />
-                <SiNginx size={28} className='text-primary' />
-                <SiCelery size={28} className='text-primary' />
+
+            {/* Row 3 */}
+            <div className='flex gap-3 justify-center'>
+                <FaGitAlt size={26} className='text-[#F05032] hover:scale-110 transition-transform' />
+                <FaDocker size={26} className='text-[#2496ED] hover:scale-110 transition-transform' />
+                <FaLinux size={26} className='text-[#FCC624] hover:scale-110 transition-transform' />
+                <DiRedis size={26} className='text-[#DC382D] hover:scale-110 transition-transform' />
+                <SiNginx size={26} className='text-white hover:scale-110 transition-transform' />
+                <SiCelery size={26} className='text-[#37814A] hover:scale-110 transition-transform' />
             </div>
-            <div className='flex space-x-4 items-center'>
-                <BiLogoPostgresql size={28} className='text-primary' />
-                <SiMongodb size={28} className='text-primary' />
-                <SiMysql size={28} className='text-primary' />
-                <IoLogoFirebase size={28} className='text-primary' />
-                <FaAws size={36} className='text-primary' />
-                <SiGooglecloud size={28} className='text-primary' />
+
+            {/* Row 4 */}
+            <div className='flex gap-3 justify-center'>
+                <BiLogoPostgresql size={26} className='text-[#4169E1] hover:scale-110 transition-transform' />
+                <SiMongodb size={26} className='text-[#47A248] hover:scale-110 transition-transform' />
+                <SiMysql size={26} className='text-[#4479A1] hover:scale-110 transition-transform' />
+                <IoLogoFirebase size={26} className='text-[#FFCA28] hover:scale-110 transition-transform' />
+                <FaAws size={26} className='text-[#FF9900] hover:scale-110 transition-transform' />
+                <SiGooglecloud size={26} className='text-[#4285F4] hover:scale-110 transition-transform' />
             </div>
         </div>
     )

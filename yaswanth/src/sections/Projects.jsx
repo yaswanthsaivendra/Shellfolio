@@ -1,12 +1,9 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { Suspense, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Center, OrbitControls } from '@react-three/drei';
-
+import { useState } from 'react';
 import { myProjects } from '../constants/index.js';
-import CanvasLoader from '../components/CanvasLoader.jsx';
-import DemoComputer from '../components/DemoComputer.jsx';
+import { SiNextdotjs, SiDjango, SiTailwindcss, SiFlask, SiTypescript, SiCelery } from "react-icons/si"; 
+import { FaAws, FaDocker, FaNode, FaReact, FaPython } from "react-icons/fa";
 
 const projectCount = myProjects.length;
 
@@ -24,75 +21,143 @@ const Projects = () => {
   };
 
   useGSAP(() => {
-    gsap.fromTo(`.animatedText`, { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.2, ease: 'power2.inOut' });
+    gsap.fromTo(`.animatedText`, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: 'power2.out' });
   }, [selectedProjectIndex]);
 
   const currentProject = myProjects[selectedProjectIndex];
 
+  const getIconComponent = (iconName) => {
+    const icons = {
+      SiNextdotjs,
+      SiDjango,
+      SiTailwindcss,
+      SiFlask,
+      SiTypescript,
+      FaAws,
+      FaDocker,
+      SiCelery,
+      FaNode,
+      FaReact,
+      FaPython
+    };
+    return icons[iconName];
+  };
+
+  const getIconColor = (iconName) => {
+    const colors = {
+      SiNextdotjs: '#000000',
+      SiDjango: '#21ea9d',
+      SiTailwindcss: '#06B6D4',
+      SiFlask: '#FFFFFF',
+      SiTypescript: '#3178C6',
+      FaAws: '#FF9900',
+      FaDocker: '#2496ED',
+      SiCelery: '#37814A',
+      FaNode: '#37814A',
+      FaReact: '#37814A',
+      FaPython: '#37814A'
+    };
+    return colors[iconName] || '#FFFFFF';
+  };
+
   return (
-    <section className="c-space my-20">
-      <p className="head-text">My Selected Work</p>
+    <section id="projects" className="min-h-screen py-20 bg-gradient-to-b from-black-100 to-black-200">
+      <div className="max-w-6xl mx-auto c-space">
+        <div className="flex flex-col items-center mb-16">
+          <h2 className="head-text text-center">Featured Projects</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mt-4" />
+        </div>
 
-      <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
-          <div className="absolute top-0 right-0">
-            <img src={currentProject.spotlight} alt="spotlight" className="w-full h-96 object-cover rounded-xl" />
+        <div className="bg-gradient-to-br from-black-200/80 to-black-300/80 backdrop-blur-lg rounded-2xl p-10 shadow-2xl">
+          {/* Project Navigation */}
+          <div className="flex items-center justify-between mb-10">
+            <div>
+              <h3 className="text-3xl font-bold animatedText bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+                {currentProject.title}
+              </h3>
+              <div className="h-1 w-20 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mt-2" />
+            </div>
+            <div className="flex gap-4">
+              <button 
+                className="arrow-btn group" 
+                onClick={() => handleNavigation('previous')}
+              >
+                <img src="/assets/left-arrow.png" alt="previous" className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              </button>
+              <button 
+                className="arrow-btn group" 
+                onClick={() => handleNavigation('next')}
+              >
+                <img src="/assets/right-arrow.png" alt="next" className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              </button>
+            </div>
           </div>
 
-          <div className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg" style={currentProject.logoStyle}>
-            <img className="w-10 h-10 shadow-sm" src={currentProject.logo} alt="logo" />
-          </div>
-
-          <div className="flex flex-col gap-5 text-white-600 my-5">
-            <p className="text-white text-2xl font-semibold animatedText">{currentProject.title}</p>
-
-            <p className="animatedText">{currentProject.desc}</p>
-            <p className="animatedText">{currentProject.subdesc}</p>
-          </div>
-
-          <div className="flex items-center justify-between flex-wrap gap-5">
-            <div className="flex items-center gap-3">
-              {currentProject.tags.map((tag, index) => (
-                <div key={index} className="tech-logo">
-                  <img src={tag.path} alt={tag.name} />
-                </div>
-              ))}
+          {/* Project Content */}
+          <div className="grid lg:grid-cols-2 gap-10">
+            {/* Project Image */}
+            <div className="relative group">
+              <div className="relative aspect-video rounded-xl overflow-hidden ring-2 ring-black-300 shadow-xl">
+                <img 
+                  src={currentProject.spotlight} 
+                  alt={currentProject.title}
+                  className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
             </div>
 
-            <a
-              className="flex items-center gap-2 cursor-pointer text-white-600"
-              href={currentProject.href}
-              target="_blank"
-              rel="noreferrer">
-              <p>Check Live Site</p>
-              <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
-            </a>
-          </div>
+            {/* Project Info */}
+            <div className="space-y-6">
+              <div className="prose prose-invert max-w-none">
+                <p className="text-lg text-gray-200 animatedText leading-relaxed">{currentProject.desc}</p>
+                <p className="text-gray-400 animatedText mt-4">{currentProject.subdesc}</p>
+              </div>
 
-          <div className="flex justify-between items-center mt-7">
-            <button className="arrow-btn" onClick={() => handleNavigation('previous')}>
-              <img src="/assets/left-arrow.png" alt="left arrow" />
-            </button>
+              <div className="flex flex-col gap-6 pt-6 border-t border-black-300">
+                <div className="flex flex-wrap gap-3">
+                  {currentProject.tags.map((tag, index) => {
+                    const IconComponent = getIconComponent(tag.icon);
+                    return (
+                      <div 
+                        key={index} 
+                        className="tech-logo group"
+                        title={tag.name}
+                      >
+                        <IconComponent 
+                          className="w-6 h-6 group-hover:scale-110 transition-transform" 
+                          style={{ color: getIconColor(tag.icon) }}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
 
-            <button className="arrow-btn" onClick={() => handleNavigation('next')}>
-              <img src="/assets/right-arrow.png" alt="right arrow" className="w-4 h-4" />
-            </button>
+                <a
+                  className="flex items-center justify-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl hover:opacity-90 transition-opacity group w-full sm:w-auto"
+                  href={currentProject.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className="text-base font-medium">View Live Project</span>
+                  <img 
+                    src="/assets/arrow-up.png" 
+                    alt="arrow" 
+                    className="w-4 h-4 group-hover:translate-x-1 transition-transform" 
+                  />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
-          <Canvas>
-            <ambientLight intensity={Math.PI} />
-            <directionalLight position={[10, 10, 5]} />
-            <Center>
-              <Suspense fallback={<CanvasLoader />}>
-                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
-                  <DemoComputer texture={currentProject.texture} />
-                </group>
-              </Suspense>
-            </Center>
-            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
-          </Canvas>
+        {/* Project Counter */}
+        <div className="mt-6 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-black-300/50 backdrop-blur-sm rounded-full">
+            <span className="text-sm font-medium text-gray-300">
+              Project {selectedProjectIndex + 1} of {projectCount}
+            </span>
+          </div>
         </div>
       </div>
     </section>

@@ -1,25 +1,4 @@
-export const navLinks = [
-  {
-    id: 1,
-    name: 'Home',
-    to: 'home',
-  },
-  {
-    id: 2,
-    name: 'About',
-    to: 'about',
-  },
-  {
-    id: 3,
-    name: 'Work',
-    to: 'work',
-  },
-  {
-    id: 4,
-    name: 'Contact',
-    to: 'contact',
-  },
-];
+
 
 export const clientReviews = [
   {
@@ -55,7 +34,6 @@ export const clientReviews = [
       'Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
   },
 ];
-
 export const myProjects = [
   {
     title: 'Patronus - Consent Manager Platform',
@@ -63,54 +41,138 @@ export const myProjects = [
     subdesc:
       'Built using Next.js, Tailwind CSS, TypeScript, Django, Flask, and integrated with Keycloak for secure authentication, Patronus Consent Manager delivers a scalable, secure, and seamless experience for privacy compliance and consent management.',
     href: 'https://getpatronus.com/',
-    texture: '/textures/project/project1.mp4',
-    logo: '/assets/project-logo1.svg',
-    logoStyle: {
-      backgroundColor: '#2A1816',
-      border: '0.2px solid #36201D',
-      boxShadow: '0px 0px 60px 0px #AA3C304D',
-    },
-    spotlight: '/assets/spotlight1.png',
+    spotlight: '/1.png',
     tags: [
       {
         id: 1,
         name: 'Next Js',
-        path: '/assets/nextjs.svg',
+        icon: 'SiNextdotjs',
       },
       {
         id: 2,
         name: 'Django',
-        path: '/assets/django.svg',
+        icon: 'SiDjango',
       },
       {
         id: 3,
         name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        icon: 'SiTailwindcss',
       },
       {
         id: 4,
         name: 'Flask',
-        path: 'assets/flask.svg',
+        icon: 'SiFlask',
       },
       {
         id: 5,
         name: 'TypeScript',
-        path: '/assets/typescript.png',
+        icon: 'SiTypescript',
       },
     ],
   },
+  {
+    title: 'Techsnap - EdTech Platform',
+    desc: 'Techsnap is a comprehensive Learning Management System (LMS) offered as a Software-as-a-Service solution for educational institutions. The platform streamlines the entire learning process with features like course management, student progress tracking, automated assessment systems, and real-time analytics. Working on the backend, I implemented robust APIs, automated task scheduling, and scalable cloud infrastructure to support thousands of concurrent users.',
+    subdesc: 'Developed using Django REST Framework for API development, Celery for asynchronous task processing, containerized with Docker for consistent deployment, and hosted on AWS for scalability and reliability.',
+    href: 'https://techsnap.in',
+    spotlight: '/2.png',
+    tags: [
+      {
+        id: 1,
+        name: 'Django',
+        icon: 'SiDjango',
+      },
+      {
+        id: 2,
+        name: 'AWS',
+        icon: 'FaAws',
+      },
+      {
+        id: 3,
+        name: 'Docker',
+        icon: 'FaDocker',
+      },
+      {
+        id: 4,
+        name: 'Celery',
+        icon: 'SiCelery',
+      }
+    ],
+  },
+  {
+    title: 'DomSell - Domain Reselling Marketplace',
+    desc: 'DomSell is an innovative mobile marketplace designed for buying and selling premium domain names. The platform features a sleek user interface, real-time domain availability checking, secure payment processing, and an intelligent domain valuation system. Users can easily list their domains, negotiate prices through an in-app chat system, and complete transactions securely.',
+    subdesc: 'Built as a mobile-first application using React Native and Node.js, with Clerk for authentication and TailwindCSS for styling. The app delivers a smooth, native-like experience while maintaining robust security for domain transactions.',
+    href: 'https://domsell.store/',
+    spotlight: '/3.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React Native',
+        icon: 'FaReact',
+      },
+      {
+        id: 2,
+        name: 'Node.js',
+        icon: 'FaNode',
+      },
+      {
+        id: 3,
+        name: 'TailwindCSS',
+        icon: 'SiTailwindcss',
+      }
+    ],
+  },
+  {
+    title: 'UnStartED - EdTech Platform',
+    desc: 'UnStartED is a comprehensive online learning platform offering job-assured certification programs in executive management. The platform features hands-on learning with India-specific case studies, direct networking opportunities with industry experts, and dedicated placement assistance. Students gain practical insights through real-world case studies of companies like Tata Nano, Flipkart, and Ola.',
+    subdesc: 'Built with Django REST Framework for robust API development, containerized with Docker for seamless deployment, and hosted on AWS for scalability. The frontend utilizes JavaScript for interactive learning experiences.',
+    href: 'https://unstarted.in/',
+    spotlight: '/4.png',
+    tags: [
+      {
+        id: 1,
+        name: 'Django',
+        icon: 'SiDjango',
+      },
+      {
+        id: 2,
+        name: 'Docker',
+        icon: 'FaDocker',
+      },
+      {
+        id: 3,
+        name: 'AWS',
+        icon: 'FaAws',
+      }
+    ],
+  },
+  {
+    title: 'Helpful Genie - AI Powered Chat',
+    desc: 'Oro is a generative AI chatbot designed for e-commerce and retail, enhancing customer interactions with seamless sales and service support. With 70% of people preferring chat or messaging for quicker solutions, Oro ensures they find what they need efficiently.',
+    subdesc: 'Built using Python and Flask for the backend API, with a modern frontend styled using TailwindCSS. The platform delivers an intelligent, responsive chatbot experience that accelerates sales and improves customer service.',
+    href: 'https://www.helpfulgenie.app/',
+    spotlight: '/5.png',
+    tags: [
+      {
+        id: 1,
+        name: 'Python',
+        icon: 'FaPython',
+      },
+      {
+        id: 2,
+        name: 'Flask',
+        icon: 'SiFlask',
+      },
+      {
+        id: 3,
+        name: 'TailwindCSS',
+        icon: 'SiTailwindcss',
+      }
+    ],
+  }
 ];
 
-export const calculateSizes = (isSmall, isMobile, isTablet) => {
-  return {
-    deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
-    deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
-    cubePosition: isSmall ? [4, -5, 0] : isMobile ? [5, -5, 0] : isTablet ? [5, -5, 0] : [9, -5.5, 0],
-    reactLogoPosition: isSmall ? [3, 4, 0] : isMobile ? [5, 4, 0] : isTablet ? [5, 4, 0] : [12, 3, 0],
-    ringPosition: isSmall ? [-5, 7, 0] : isMobile ? [-10, 10, 0] : isTablet ? [-12, 10, 0] : [-24, 10, 0],
-    targetPosition: isSmall ? [-5, -10, -10] : isMobile ? [-9, -10, -10] : isTablet ? [-11, -7, -10] : [-13, -13, -10],
-  };
-};
 
 export const workExperiences = [
   {
