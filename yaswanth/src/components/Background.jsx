@@ -27,28 +27,31 @@ const Background = ({ variant = 'hero' }) => {
     if (variant === 'about') {
         return (
             <>
-                {/* About background - Sophisticated, subtle design */}
+                {/* About background - Blending with hero and projects sections */}
                 <div className="absolute inset-0 overflow-hidden">
-                    {/* Main gradient background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-black-200/50 via-blue-900/10 to-black-200/50"></div>
+                    {/* Main gradient that blends with hero section */}
+                    <div className="absolute inset-0">
+                        <div className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 blur-3xl top-0 left-0 animate-pulse"></div>
+                        <div className="absolute w-[400px] h-[400px] rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-3xl bottom-0 right-0 animate-pulse delay-1000"></div>
+                    </div>
                     
-                    {/* Floating elements */}
+                    {/* Floating elements that match projects style */}
                     <div className="absolute w-full h-full">
-                        <div className="absolute top-[10%] right-[20%] w-[400px] h-[400px] bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-[100px] animate-float"></div>
-                        <div className="absolute bottom-[20%] left-[10%] w-[300px] h-[300px] bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-full blur-[100px] animate-float-delay"></div>
+                        <div className="absolute top-[30%] right-[20%] w-[300px] h-[300px] bg-gradient-to-r from-secondary/10 to-tertiary/10 rounded-full blur-[90px] animate-float"></div>
+                        <div className="absolute bottom-[20%] left-[10%] w-[250px] h-[250px] bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full blur-[90px] animate-float-delay"></div>
                     </div>
 
-                    {/* Subtle dot matrix */}
-                    <div className="absolute inset-0 opacity-[0.15]" style={{
-                        backgroundImage: `radial-gradient(circle at center, rgba(255,255,255,0.1) 2px, transparent 2px)`,
-                        backgroundSize: '50px 50px'
+                    {/* Unified dot pattern that matches both sections */}
+                    <div className="absolute inset-0 opacity-[0.1]" style={{
+                        backgroundImage: `radial-gradient(circle at center, rgba(255,255,255,0.1) 1.5px, transparent 1.5px)`,
+                        backgroundSize: '40px 40px'
                     }}></div>
                 </div>
             </>
         )
     }
 
-    // Default hero background remains unchanged
+    // Default hero background
     return (
         <>
             <div className="absolute inset-0 overflow-hidden">
