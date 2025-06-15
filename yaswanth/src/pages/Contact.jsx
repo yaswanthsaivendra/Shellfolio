@@ -171,10 +171,10 @@ Your Public Key is already set: ${EMAIL_PUBLIC_KEY}
                 {/* Header */}
                 <motion.div variants={itemVariants} className="text-center mb-12 md:mb-16">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-generalsans mb-4 tracking-tight">
-                        Let's Connect
+                        Let&apos;s Connect
                     </h1>
                     <p className="text-white/70 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
-                        Ready to bring your ideas to life? Let's discuss how we can work together to create something amazing.
+                        Ready to bring your ideas to life? Let&apos;s discuss how we can work together to create something amazing.
                     </p>
                 </motion.div>
 
@@ -187,7 +187,7 @@ Your Public Key is already set: ${EMAIL_PUBLIC_KEY}
                                     Send a Message
                                 </h2>
                                 <p className="text-white/60 text-sm font-light">
-                                    Fill out the form below and I'll get back to you within 24 hours
+                                    Fill out the form below and I&apos;ll get back to you within 24 hours
                                 </p>
                             </div>
                             
@@ -397,8 +397,8 @@ Your Public Key is already set: ${EMAIL_PUBLIC_KEY}
                                 </h3>
                             </div>
                             <p className="text-white/80 text-sm font-light leading-relaxed">
-                                I'm currently accepting new freelance projects and collaboration opportunities. 
-                                Let's create something extraordinary together!
+                                I&apos;m currently accepting new freelance projects and collaboration opportunities. 
+                                Let&apos;s create something extraordinary together!
                             </p>
                         </motion.div>
                     </motion.div>

@@ -1,0 +1,97 @@
+# Yaswanth Sai Vendra - Portfolio Information for LLMs
+
+## About
+Name: Yaswanth Sai Vendra
+Location: Bangalore, India
+Profession: Full Stack Developer
+Website: https://yashv.me
+Email: yaswanthsaivendra@gmail.com
+
+## Professional Summary
+Yaswanth is a skilled Full Stack Developer based in Bangalore, India. He specializes in modern web technologies and creates engaging digital experiences. He's passionate about building innovative solutions and is currently available for freelance projects and collaborations.
+
+## Technical Skills
+- Frontend: React.js, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS
+- Backend: Node.js, Express.js
+- Databases: MongoDB, PostgreSQL, MySQL
+- Tools & Technologies: Git, Webpack, Vite, REST APIs
+- Design: UI/UX Design, Responsive Design, Mobile-First Development
+- Animation: Framer Motion, CSS Animations
+- Other: EmailJS integration, PWA development, SEO optimization
+
+## Specializations
+- Full Stack Web Development
+- User Interface (UI) Design
+- User Experience (UX) Design
+- Responsive Web Design
+- Modern JavaScript Frameworks
+- API Development and Integration
+- Performance Optimization
+- SEO and Web Analytics
+
+## Projects & Work
+Yaswanth has worked on various projects ranging from:
+- Personal portfolio websites with modern animations and interactions
+- Full-stack web applications with React and Node.js
+- UI/UX design for web and mobile applications
+- Integration of third-party services like EmailJS for contact forms
+- SEO optimization and social media integration
+
+## Current Focus
+- Building modern, interactive web applications
+- Creating beautiful and functional user interfaces
+- Developing full-stack solutions for clients
+- Freelance web development and design projects
+- Open to collaborations and new opportunities
+
+## Services Offered
+- Full Stack Web Development
+- Frontend Development (React, JavaScript)
+- Backend Development (Node.js, APIs)
+- UI/UX Design and Prototyping
+- Website Optimization and SEO
+- Responsive Design Implementation
+- Third-party Integrations
+- Freelance Project Development
+
+## Social & Professional Links
+- GitHub: https://github.com/yaswanthsaivendra
+- LinkedIn: https://www.linkedin.com/in/yaswanthvendra/
+- Twitter/X: https://x.com/Yash0x01
+
+## Contact & Collaboration
+Yaswanth is actively seeking:
+- Freelance web development projects
+- UI/UX design opportunities  
+- Full-stack development collaborations
+- Interesting technical challenges
+- Remote work opportunities worldwide
+
+He's highly adaptable to different time zones and excels in remote collaboration. Based in Bangalore, India, but open to working with clients globally.
+
+## Portfolio Features
+The portfolio website (yashv.me) includes:
+- Modern, responsive design with dark theme
+- Interactive animations using Framer Motion
+- Contact form with EmailJS integration
+- Comprehensive SEO optimization
+- Social media preview optimization
+- Progressive Web App (PWA) features
+- Professional project showcases
+
+## Professional Approach
+- Client-focused development
+- Clean, maintainable code
+- Modern development practices
+- Responsive and accessible design
+- Performance-optimized solutions
+- SEO-friendly implementations
+- Professional communication
+- Timely project delivery
+
+## Availability
+Currently available for new projects and collaborations. Flexible with time zones and committed to delivering high-quality work within agreed timelines.
+
+---
+Last updated: 2025
+Contact: yaswanthsaivendra@gmail.com for project inquiries and collaborations. 
