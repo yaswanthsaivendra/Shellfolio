@@ -46,17 +46,17 @@ const Projects = () => {
 
   const getIconColor = (iconName) => {
     const colors = {
-      SiNextdotjs: '#000000',
-      SiDjango: '#21ea9d',
-      SiTailwindcss: '#06B6D4',
+      SiNextdotjs: '#FFFFFF',
+      SiDjango: '#0F7B3C',
+      SiTailwindcss: '#38BDF8',
       SiFlask: '#FFFFFF',
       SiTypescript: '#3178C6',
       FaAws: '#FF9900',
       FaDocker: '#2496ED',
       SiCelery: '#37814A',
-      FaNode: '#37814A',
-      FaReact: '#37814A',
-      FaPython: '#37814A'
+      FaNode: '#68A063',
+      FaReact: '#61DAFB',
+      FaPython: '#FFD43B'
     };
     return colors[iconName] || '#FFFFFF';
   };
@@ -67,17 +67,17 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto c-space">
         <div className="flex flex-col items-center mb-16">
           <h2 className="head-text text-center">Featured Projects</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mt-4" />
+          <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mt-4" />
         </div>
 
-        <div className="bg-gradient-to-br from-black-200/80 to-black-300/80 backdrop-blur-lg rounded-2xl p-10 shadow-2xl">
+        <div className="bg-gradient-to-br from-black-200/90 to-black-300/90 backdrop-blur-lg rounded-2xl p-10 shadow-2xl border border-primary/10 hover:border-primary/20 transition-all duration-300">
           {/* Project Navigation */}
           <div className="flex items-center justify-between mb-10">
             <div>
-              <h3 className="text-3xl font-bold animatedText bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+              <h3 className="text-3xl font-bold animatedText bg-clip-text text-transparent bg-gradient-to-r from-white to-tertiary">
                 {currentProject.title}
               </h3>
-              <div className="h-1 w-20 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mt-2" />
+              <div className="h-1 w-20 bg-gradient-to-r from-primary to-secondary rounded-full mt-2" />
             </div>
             <div className="flex gap-4">
               <button 
@@ -99,7 +99,7 @@ const Projects = () => {
           <div className="grid lg:grid-cols-2 gap-10">
             {/* Project Image */}
             <div className="relative group">
-              <div className="relative aspect-video rounded-xl overflow-hidden ring-2 ring-black-300 shadow-xl">
+              <div className="relative aspect-video rounded-xl overflow-hidden ring-2 ring-primary/20 shadow-xl hover:ring-primary/40 transition-all">
                 <img 
                   src={currentProject.spotlight} 
                   alt={currentProject.title}
@@ -112,11 +112,11 @@ const Projects = () => {
             {/* Project Info */}
             <div className="space-y-6">
               <div className="prose prose-invert max-w-none">
-                <p className="text-lg text-gray-200 animatedText leading-relaxed">{currentProject.desc}</p>
-                <p className="text-gray-400 animatedText mt-4">{currentProject.subdesc}</p>
+                <p className="text-lg text-white-700 animatedText leading-relaxed">{currentProject.desc}</p>
+                <p className="text-white-600 animatedText mt-4">{currentProject.subdesc}</p>
               </div>
 
-              <div className="flex flex-col gap-6 pt-6 border-t border-black-300">
+              <div className="flex flex-col gap-6 pt-6 border-t border-primary/20">
                 <div className="flex flex-wrap gap-3">
                   {currentProject.tags.map((tag, index) => {
                     const IconComponent = getIconComponent(tag.icon);
@@ -136,7 +136,7 @@ const Projects = () => {
                 </div>
 
                 <a
-                  className="flex items-center justify-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl hover:opacity-90 transition-opacity group w-full sm:w-auto"
+                  className="flex items-center justify-center gap-3 px-6 py-3 bg-gradient-to-r from-primary to-secondary rounded-xl hover:shadow-lg hover:shadow-primary/20 transition-all group w-full sm:w-auto"
                   href={currentProject.href}
                   target="_blank"
                   rel="noreferrer"
@@ -155,8 +155,8 @@ const Projects = () => {
 
         {/* Project Counter */}
         <div className="mt-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-black-300/50 backdrop-blur-sm rounded-full">
-            <span className="text-sm font-medium text-gray-300">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-black-300/60 backdrop-blur-sm rounded-full border border-primary/20">
+            <span className="text-sm font-medium text-white-600">
               Project {selectedProjectIndex + 1} of {projectCount}
             </span>
           </div>

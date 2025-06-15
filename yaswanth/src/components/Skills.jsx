@@ -23,7 +23,7 @@ const Skills = () => {
             { icon: FaReact, name: "React", color: "#61DAFB" },
             { icon: SiFlask, name: "Flask", color: "#FFFFFF" },
             { icon: FaNode, name: "Node.js", color: "#339933" },
-            { icon: SiNextdotjs, name: "Next.js", color: "#181818" },
+            { icon: SiNextdotjs, name: "Next.js", color: "#FFFFFF" },
             { icon: SiTailwindcss, name: "Tailwind", color: "#06B6D4" }
         ],
         "DevOps & Tools": [
@@ -47,8 +47,8 @@ const Skills = () => {
     return (
         <div className="grid grid-cols-2 gap-4 w-full">
             {Object.entries(skillCategories).map(([category, skills]) => (
-                <div key={category} className="bg-black/20 p-3 rounded-lg">
-                    <h3 className="text-sm font-semibold text-gray-300 mb-2">{category}</h3>
+                <div key={category} className="bg-black-300/40 backdrop-blur-sm p-3 rounded-lg border border-primary/10 hover:border-primary/30 transition-all">
+                    <h3 className="text-sm font-semibold text-white-700 mb-2">{category}</h3>
                     <div className="flex flex-wrap gap-2">
                         {skills.map((skill) => {
                             const Icon = skill.icon;
@@ -61,11 +61,11 @@ const Skills = () => {
                                 >
                                     <Icon
                                         size={20}
-                                        className="transition-all duration-300 hover:scale-125"
+                                        className="transition-all duration-300 hover:scale-125 cursor-pointer"
                                         style={{ color: skill.color }}
                                     />
                                     {hoveredSkill === skill.name && (
-                                        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs py-1 px-2 rounded whitespace-nowrap">
+                                        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black-300/90 text-white text-xs py-1 px-2 rounded whitespace-nowrap border border-primary/20 backdrop-blur-sm">
                                             {skill.name}
                                         </div>
                                     )}

@@ -12,6 +12,7 @@
 body {
   font-family: 'General Sans', sans-serif;
   color: white;
+  background-color: #0a0a0a;
 }
 
 
@@ -32,6 +33,36 @@ h1 {
     @apply sm:px-10 px-5;
   }
 
+  /* Mobile-first utilities */
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  /* Touch-friendly tap targets */
+  .tap-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Mobile scrolling improvements */
+  .mobile-scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* Mobile-optimized shadows */
+  .mobile-shadow {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* App-like animations */
+  .page-transition {
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  }
+
   .head-text {
     @apply sm:text-4xl text-3xl font-semibold text-gray_gradient;
   }
@@ -41,11 +72,11 @@ h1 {
   }
 
   .nav-li {
-    @apply text-neutral-400 hover:text-white font-generalsans max-sm:hover:bg-black-500 max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5;
+    @apply text-white-500 hover:text-primary font-generalsans max-sm:hover:bg-black-500 max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5 transition-colors;
   }
 
   .nav-li_a {
-    @apply text-lg md:text-base hover:text-white transition-colors;
+    @apply text-lg md:text-base hover:text-primary transition-colors;
   }
 
   .nav-sidebar {
@@ -53,20 +84,20 @@ h1 {
   }
 
   .text-gray_gradient {
-    @apply bg-gradient-to-r from-[#BEC1CF] from-60% via-[#D5D8EA] via-60% to-[#D5D8EA] to-100% bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-white via-secondary to-tertiary bg-clip-text text-transparent;
   }
 
   /* button component */
   .btn {
-    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300  transition-all active:scale-95 text-white mx-auto;
+    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300 border border-primary/20 transition-all active:scale-95 text-white mx-auto hover:bg-black-500 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10;
   }
 
   .btn-ping {
-    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75;
+    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-primary/40 opacity-75;
   }
 
   .btn-ping_dot {
-    @apply relative inline-flex rounded-full h-3 w-3 bg-green-500;
+    @apply relative inline-flex rounded-full h-3 w-3 bg-primary;
   }
 
   /* hero section */
@@ -76,7 +107,7 @@ h1 {
 
   /* about section */
   .grid-container {
-    @apply w-full h-full border border-black-300 bg-[#0a1624] rounded-lg px-4 py-3 flex flex-col gap-2;
+    @apply w-full h-full border border-white/10 bg-black-200/90 rounded-lg px-4 py-3 flex flex-col gap-2 backdrop-blur-sm hover:border-primary/30 transition-all duration-300;
   }
 
   .grid-headtext {
@@ -84,7 +115,7 @@ h1 {
   }
 
   .grid-subtext {
-    @apply text-[#afb0b6] text-base font-generalsans;
+    @apply text-white-600 text-base font-generalsans;
   }
 
   .copy-container {
@@ -93,11 +124,11 @@ h1 {
 
   /* projects section  */
   .arrow-btn {
-    @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient;
+    @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient border border-primary/20 hover:border-primary/40;
   }
 
   .tech-logo {
-    @apply w-10 h-10 rounded-md p-2 bg-neutral-100 bg-opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center;
+    @apply w-10 h-10 rounded-md p-2 bg-black-300/80 backdrop-filter backdrop-blur-lg flex justify-center items-center border border-primary/10 hover:border-primary/30 transition-all;
   }
 
   /* clients section */
@@ -106,7 +137,7 @@ h1 {
   }
 
   .client-review {
-    @apply rounded-lg md:p-10 p-5 col-span-1 bg-black-300 bg-opacity-50;
+    @apply rounded-lg md:p-10 p-5 col-span-1 bg-black-300/80 border border-primary/10;
   }
 
   .client-content {
@@ -119,15 +150,15 @@ h1 {
   }
 
   .work-canvas {
-    @apply col-span-1 rounded-lg bg-black-200 border border-black-300;
+    @apply col-span-1 rounded-lg bg-black-200 border border-primary/10;
   }
 
   .work-content {
-    @apply col-span-2 rounded-lg bg-black-200 border border-black-300;
+    @apply col-span-2 rounded-lg bg-black-200 border border-primary/10;
   }
 
   .work-content_container {
-    @apply grid grid-cols-[auto_1fr] items-start gap-5  transition-all ease-in-out duration-500 cursor-pointer hover:bg-black-300 rounded-lg sm:px-5 px-2.5;
+    @apply grid grid-cols-[auto_1fr] items-start gap-5  transition-all ease-in-out duration-500 cursor-pointer hover:bg-black-300/60 rounded-lg sm:px-5 px-2.5;
   }
 
   .work-content_logo {
@@ -135,7 +166,7 @@ h1 {
   }
 
   .work-content_bar {
-    @apply flex-1 w-0.5 mt-4 h-full bg-black-300 group-hover:bg-black-500 group-last:hidden;
+    @apply flex-1 w-0.5 mt-4 h-full bg-primary/30 group-hover:bg-primary/50 group-last:hidden;
   }
 
   /* contact section */
@@ -148,11 +179,11 @@ h1 {
   }
 
   .field-input {
-    @apply w-full bg-black-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg text-white-800 shadow-black-200 shadow-2xl focus:outline-none;
+    @apply w-full bg-black-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg text-white border border-primary/10 shadow-black-200 shadow-2xl focus:outline-none focus:border-primary/40 transition-all;
   }
 
   .field-btn {
-    @apply bg-black-500 px-5 py-2 min-h-12 rounded-lg shadow-black-200 shadow-2xl flex justify-center items-center text-lg text-white gap-3;
+    @apply bg-black-500 px-5 py-2 min-h-12 rounded-lg shadow-black-200 shadow-2xl flex justify-center items-center text-lg text-white gap-3 border border-primary/20 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all;
   }
 
   .field-btn_arrow {
@@ -161,7 +192,7 @@ h1 {
 
   /*  footer */
   .social-icon {
-    @apply w-12 h-12 rounded-full flex justify-center items-center bg-black-300 border border-black-200;
+    @apply w-12 h-12 rounded-full flex justify-center items-center bg-black-300 border border-primary/10 hover:border-primary/30 hover:bg-black-400 transition-all;
   }
 }
 
@@ -176,10 +207,10 @@ h1 {
 .arrow-gradient {
   background-image: linear-gradient(
     to right,
-    rgba(255, 255, 255, 0.1) 10%,
-    rgba(255, 255, 255, 0.000025) 50%,
-    rgba(255, 255, 255, 0.000025) 50%,
-    rgba(255, 255, 255, 0.025) 100%
+    rgba(59, 130, 246, 0.1) 10%,
+    rgba(59, 130, 246, 0.05) 50%,
+    rgba(59, 130, 246, 0.05) 50%,
+    rgba(59, 130, 246, 0.15) 100%
   );
 }
 
